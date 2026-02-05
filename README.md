@@ -15,7 +15,7 @@ A starter template for building full-stack business platforms with Claude Code. 
 
 ## Quick start
 
-1. **Clone this repo** (replace `my-project` with your project name):
+1. **Clone this repo** — replace `my-project` with your project name (this will also become your GitHub repo name, so pick something unique — lowercase, hyphens, no spaces):
    ```bash
    git clone https://github.com/rsonnad/alpacapps-infra.git my-project
    cd my-project
@@ -31,7 +31,17 @@ A starter template for building full-stack business platforms with Claude Code. 
    /setup-alpacapps-infra
    ```
 
-Claude will walk you through setting up each service interactively — creating your database, deploying edge functions, configuring webhooks, and building your CLAUDE.md. You don't need to touch the command line.
+Claude will create your own GitHub repo, disconnect from this starter template, then walk you through setting up each service interactively — creating your database, deploying edge functions, configuring webhooks, and building your CLAUDE.md.
+
+## What happens during setup
+
+The setup skill will:
+1. Ask what you're building and which services you need
+2. Create a new GitHub repo under your account (using the folder name you chose)
+3. Disconnect from the `alpacapps-infra` template origin
+4. Set up Supabase, deploy edge functions, configure webhooks
+5. Build your `CLAUDE.md` with all credentials and connection details
+6. Push everything to your new repo — your site goes live on GitHub Pages
 
 ## Full guide
 
