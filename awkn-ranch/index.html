@@ -8,230 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/logo.png" type="image/png">
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --color-brown: #6B4226;
-            --color-brown-dark: #4A2E1A;
-            --color-brown-light: #8B6340;
-            --color-cream: #F5F0EB;
-            --color-cream-dark: #EDE5DB;
-            --color-offwhite: #FAF8F5;
-            --color-text: #2C2C2C;
-            --color-text-light: #5A5A5A;
-            --color-white: #FFFFFF;
-            --color-black: #1A1A1A;
-            --font-heading: 'Cormorant Garamond', Georgia, serif;
-            --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-            --max-width: 1400px;
-            --section-padding: 100px 0;
-            --gutter: 4vw;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--color-text);
-            background: var(--color-white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== HEADER / NAV ===== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(107, 66, 38, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled {
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        nav {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--gutter);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 80px;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 36px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-family: var(--font-body);
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--color-text);
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--color-brown);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--color-brown);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-dropdown {
-            position: relative;
-        }
-
-        .nav-dropdown .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--color-white);
-            min-width: 200px;
-            padding: 12px 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-        }
-
-        .nav-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 8px 24px;
-            font-size: 12px;
-            letter-spacing: 1.5px;
-        }
-
-        /* Mobile menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 8px;
-            background: none;
-            border: none;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--color-text);
-            transition: all 0.3s ease;
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--color-white);
-            padding: 40px var(--gutter);
-            z-index: 999;
-        }
-
-        .mobile-menu.open {
-            display: block;
-        }
-
-        .mobile-menu a {
-            display: block;
-            padding: 16px 0;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        /* ===== HERO SECTION ===== */
+        /* Homepage-specific styles */
         .hero {
             position: relative;
             height: 100vh;
@@ -242,34 +22,22 @@
             text-align: center;
             overflow: hidden;
         }
-
         .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
+            position: absolute; inset: 0; z-index: 0;
         }
-
         .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 100%; height: 100%; object-fit: cover;
         }
-
         .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(26, 26, 26, 0.35);
-            z-index: 1;
+            position: absolute; inset: 0;
+            background: rgba(26,26,26,0.35); z-index: 1;
         }
-
         .hero-content {
-            position: relative;
-            z-index: 2;
+            position: relative; z-index: 2;
             max-width: 800px;
             padding: 0 var(--gutter);
             animation: fadeInUp 1.5s ease 0.3s both;
         }
-
         .hero-content h1 {
             font-family: var(--font-heading);
             font-size: clamp(32px, 5vw, 64px);
@@ -279,435 +47,135 @@
             margin-bottom: 12px;
             letter-spacing: 1px;
         }
-
         .hero-content .subtitle {
             font-family: var(--font-body);
             font-size: clamp(14px, 1.8vw, 18px);
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255,255,255,0.85);
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 40px;
         }
-
         .hero-ctas {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: flex; gap: 20px;
+            justify-content: center; flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 14px 36px;
-            font-family: var(--font-body);
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--color-brown);
-            color: var(--color-white);
-        }
-
-        .btn-primary:hover {
-            background: var(--color-brown-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--color-white);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-        }
-
-        .btn-outline:hover {
-            background: var(--color-white);
-            color: var(--color-text);
-            transform: translateY(-2px);
-        }
-
-        .btn-dark {
-            background: var(--color-text);
-            color: var(--color-white);
-        }
-
-        .btn-dark:hover {
-            background: var(--color-black);
-            transform: translateY(-2px);
-        }
-
-        /* ===== INTRO / CONNECT SECTION ===== */
-        .intro-section {
-            padding: var(--section-padding);
-            background: var(--color-offwhite);
-        }
-
+        .intro-section { padding: var(--section-padding); background: var(--color-offwhite); }
         .intro-grid {
-            max-width: var(--max-width);
-            margin: 0 auto;
+            max-width: var(--max-width); margin: 0 auto;
             padding: 0 var(--gutter);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 60px; align-items: center;
         }
-
         .intro-text h2 {
             font-family: var(--font-heading);
             font-size: clamp(36px, 4vw, 56px);
-            font-weight: 300;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            color: var(--color-brown-dark);
+            font-weight: 300; line-height: 1.2;
+            margin-bottom: 24px; color: var(--color-brown-dark);
         }
-
         .intro-text p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: var(--color-text-light);
-            margin-bottom: 32px;
+            font-size: 16px; line-height: 1.8;
+            color: var(--color-text-light); margin-bottom: 32px;
         }
-
-        .intro-image {
-            overflow: hidden;
-        }
-
+        .intro-image { overflow: hidden; }
         .intro-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
+            width: 100%; height: 500px; object-fit: cover;
             transition: transform 0.6s ease;
         }
+        .intro-image:hover img { transform: scale(1.03); }
 
-        .intro-image:hover img {
-            transform: scale(1.03);
-        }
-
-        /* ===== OFFERINGS / TWO COLUMN ===== */
-        .offerings-section {
-            padding: 0;
-        }
-
-        .offerings-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-
+        .offerings-section { padding: 0; }
+        .offerings-grid { display: grid; grid-template-columns: 1fr 1fr; }
         .offering-card {
-            position: relative;
-            height: 600px;
-            overflow: hidden;
-            display: flex;
-            align-items: flex-end;
+            position: relative; height: 600px; overflow: hidden;
+            display: flex; align-items: flex-end;
         }
-
         .offering-card img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            position: absolute; inset: 0;
+            width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.6s ease;
         }
-
-        .offering-card:hover img {
-            transform: scale(1.05);
-        }
-
+        .offering-card:hover img { transform: scale(1.05); }
         .offering-card-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(26, 26, 26, 0.7) 0%, rgba(26, 26, 26, 0.1) 60%);
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(26,26,26,0.7) 0%, rgba(26,26,26,0.1) 60%);
         }
-
         .offering-card-content {
-            position: relative;
-            z-index: 2;
-            padding: 40px;
-            width: 100%;
+            position: relative; z-index: 2; padding: 40px; width: 100%;
         }
-
         .offering-card-content h3 {
             font-family: var(--font-heading);
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--color-white);
-            margin-bottom: 16px;
+            font-size: 14px; font-weight: 500;
+            letter-spacing: 3px; text-transform: uppercase;
+            color: var(--color-white); margin-bottom: 16px;
         }
+        .offering-card-content .btn { font-size: 11px; padding: 12px 28px; }
 
-        .offering-card-content .btn {
-            font-size: 11px;
-            padding: 12px 28px;
-        }
-
-        /* ===== VISION SECTION ===== */
-        .vision-section {
-            padding: var(--section-padding);
-            background: var(--color-white);
-        }
-
+        .vision-section { padding: var(--section-padding); background: var(--color-white); }
         .vision-grid {
-            max-width: var(--max-width);
-            margin: 0 auto;
+            max-width: var(--max-width); margin: 0 auto;
             padding: 0 var(--gutter);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 60px; align-items: center;
         }
-
-        .vision-image {
-            overflow: hidden;
-        }
-
-        .vision-image img {
-            width: 100%;
-            height: 550px;
-            object-fit: cover;
-        }
-
+        .vision-image { overflow: hidden; }
+        .vision-image img { width: 100%; height: 550px; object-fit: cover; }
         .vision-text h2 {
             font-family: var(--font-heading);
             font-size: clamp(36px, 4vw, 52px);
-            font-weight: 300;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            color: var(--color-brown-dark);
+            font-weight: 300; line-height: 1.2;
+            margin-bottom: 24px; color: var(--color-brown-dark);
         }
-
         .vision-text .lead {
             font-family: var(--font-heading);
-            font-size: 22px;
-            font-style: italic;
-            color: var(--color-brown);
-            margin-bottom: 20px;
-            line-height: 1.5;
+            font-size: 22px; font-style: italic;
+            color: var(--color-brown); margin-bottom: 20px; line-height: 1.5;
         }
-
         .vision-text p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: var(--color-text-light);
-            margin-bottom: 32px;
+            font-size: 16px; line-height: 1.8;
+            color: var(--color-text-light); margin-bottom: 32px;
         }
 
-        /* ===== QUOTE SECTION ===== */
         .quote-section {
-            position: relative;
-            padding: 120px 0;
-            text-align: center;
-            overflow: hidden;
+            position: relative; padding: 120px 0;
+            text-align: center; overflow: hidden;
         }
-
-        .quote-bg {
-            position: absolute;
-            inset: 0;
-        }
-
-        .quote-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
+        .quote-bg { position: absolute; inset: 0; }
+        .quote-bg img { width: 100%; height: 100%; object-fit: cover; }
         .quote-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(26, 26, 26, 0.55);
+            position: absolute; inset: 0;
+            background: rgba(26,26,26,0.55);
         }
-
         .quote-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
+            position: relative; z-index: 2;
+            max-width: 800px; margin: 0 auto;
             padding: 0 var(--gutter);
         }
-
         .quote-content blockquote {
             font-family: var(--font-heading);
             font-size: clamp(22px, 3vw, 32px);
-            font-weight: 300;
-            font-style: italic;
-            line-height: 1.6;
-            color: var(--color-white);
+            font-weight: 300; font-style: italic;
+            line-height: 1.6; color: var(--color-white);
             letter-spacing: 0.5px;
         }
-
         .quote-content blockquote::before {
-            content: '\201C';
-            display: block;
-            font-size: 80px;
-            line-height: 1;
-            color: rgba(255, 255, 255, 0.3);
-            margin-bottom: -20px;
+            content: '\201C'; display: block;
+            font-size: 80px; line-height: 1;
+            color: rgba(255,255,255,0.3); margin-bottom: -20px;
         }
 
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--color-black);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 80px 0 40px;
-        }
-
-        .footer-grid {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--gutter);
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .footer-brand .footer-logo {
-            height: 40px;
-            margin-bottom: 20px;
-            filter: brightness(0) invert(1);
-        }
-
-        .footer-brand p {
-            font-size: 14px;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .footer-col h4 {
-            font-family: var(--font-body);
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--color-white);
-            margin-bottom: 20px;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col ul li a {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
-            transition: color 0.3s ease;
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--color-white);
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 16px;
-            margin-top: 16px;
-        }
-
-        .footer-social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            background: var(--color-white);
-            color: var(--color-black);
-            border-color: var(--color-white);
-        }
-
-        .footer-social a svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-        }
-
-        .footer-bottom {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 24px var(--gutter) 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            .intro-grid,
-            .vision-grid {
-                gap: 40px;
-            }
-
-            .offering-card {
-                height: 450px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+            .intro-grid, .vision-grid { gap: 40px; }
+            .offering-card { height: 450px; }
         }
-
         @media (max-width: 768px) {
-            :root {
-                --section-padding: 70px 0;
-                --gutter: 6vw;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero {
-                min-height: 500px;
-            }
-
-            .intro-grid,
-            .vision-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .intro-image img,
-            .vision-image img {
-                height: 350px;
-            }
-
-            .vision-grid .vision-image {
-                order: -1;
-            }
-
-            .offerings-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .offering-card {
-                height: 400px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
+            .hero { min-height: 500px; }
+            .intro-grid, .vision-grid { grid-template-columns: 1fr; gap: 30px; }
+            .intro-image img, .vision-image img { height: 350px; }
+            .vision-grid .vision-image { order: -1; }
+            .offerings-grid { grid-template-columns: 1fr; }
+            .offering-card { height: 400px; }
         }
     </style>
 </head>
@@ -720,18 +188,18 @@
                 <img src="images/logo.png" alt="AWKN Ranch">
             </a>
             <ul class="nav-links">
-                <li><a href="/awknwithin/awkn-ranch/">Home</a></li>
-                <li><a href="/awknwithin/awkn-ranch/#events">Events</a></li>
-                <li><a href="/awknwithin/awkn-ranch/#offerings">Offerings</a></li>
-                <li><a href="/awknwithin/awkn-ranch/#membership">Membership</a></li>
+                <li><a href="/awknwithin/awkn-ranch/" class="active">Home</a></li>
+                <li><a href="/awknwithin/awkn-ranch/events.html">Events</a></li>
+                <li><a href="/awknwithin/awkn-ranch/offerings.html">Offerings</a></li>
+                <li><a href="/awknwithin/awkn-ranch/membership.html">Membership</a></li>
                 <li class="nav-dropdown">
-                    <a href="/awknwithin/awkn-ranch/#host">Host An Event</a>
+                    <a href="#">Host An Event</a>
                     <div class="dropdown-menu">
-                        <a href="/awknwithin/awkn-ranch/#host">Collaborate With AWKN</a>
-                        <a href="/awknwithin/awkn-ranch/#host">Host A Private Event</a>
+                        <a href="/awknwithin/awkn-ranch/collaborations.html">Collaborate With AWKN</a>
+                        <a href="/awknwithin/awkn-ranch/privatevents.html">Host A Private Event</a>
                     </div>
                 </li>
-                <li><a href="/awknwithin/awkn-ranch/#connect">Connect</a></li>
+                <li><a href="/awknwithin/awkn-ranch/connect.html">Connect</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span>
@@ -744,11 +212,12 @@
     <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobile-menu">
         <a href="/awknwithin/awkn-ranch/">Home</a>
-        <a href="/awknwithin/awkn-ranch/#events">Events</a>
-        <a href="/awknwithin/awkn-ranch/#offerings">Offerings</a>
-        <a href="/awknwithin/awkn-ranch/#membership">Membership</a>
-        <a href="/awknwithin/awkn-ranch/#host">Host An Event</a>
-        <a href="/awknwithin/awkn-ranch/#connect">Connect</a>
+        <a href="/awknwithin/awkn-ranch/events.html">Events</a>
+        <a href="/awknwithin/awkn-ranch/offerings.html">Offerings</a>
+        <a href="/awknwithin/awkn-ranch/membership.html">Membership</a>
+        <a href="/awknwithin/awkn-ranch/collaborations.html">Collaborate With AWKN</a>
+        <a href="/awknwithin/awkn-ranch/privatevents.html">Host A Private Event</a>
+        <a href="/awknwithin/awkn-ranch/connect.html">Connect</a>
     </div>
 
     <!-- HERO -->
@@ -761,19 +230,19 @@
             <h1>Welcome to AWKN Ranch</h1>
             <p class="subtitle">Where consciousness meets community</p>
             <div class="hero-ctas">
-                <a href="/awknwithin/awkn-ranch/#membership" class="btn btn-primary">Explore Membership</a>
+                <a href="/awknwithin/awkn-ranch/membership.html" class="btn btn-primary">Explore Membership</a>
                 <a href="https://www.recess.tv/awkn-ranch" class="btn btn-outline" target="_blank" rel="noopener">Get A Day Pass</a>
             </div>
         </div>
     </section>
 
     <!-- INTRO / CONNECT SECTION -->
-    <section class="intro-section" id="connect">
+    <section class="intro-section">
         <div class="intro-grid">
             <div class="intro-text animate-on-scroll">
                 <h2>Connect<br>Transform<br>AWKN</h2>
                 <p>At AWKN Ranch, ancient knowledge meets modern wellness in the heart of the Texas Hill Country. We are a sanctuary for those seeking authentic connection, personal transformation, and community rooted in the wisdom of the ages.</p>
-                <a href="/awknwithin/awkn-ranch/#connect" class="btn btn-dark">Get In Now</a>
+                <a href="/awknwithin/awkn-ranch/connect.html" class="btn btn-dark">Get In Now</a>
             </div>
             <div class="intro-image animate-on-scroll">
                 <img src="images/connect.jpg" alt="AWKN Ranch interior living space with warm natural lighting">
@@ -782,9 +251,9 @@
     </section>
 
     <!-- OFFERINGS TWO-COLUMN -->
-    <section class="offerings-section" id="events">
+    <section class="offerings-section">
         <div class="offerings-grid">
-            <a href="/awknwithin/awkn-ranch/#events" class="offering-card">
+            <a href="/awknwithin/awkn-ranch/events.html" class="offering-card">
                 <img src="images/events.jpg" alt="Woman playing steel tongue drum during a wellness ceremony at AWKN Ranch">
                 <div class="offering-card-overlay"></div>
                 <div class="offering-card-content">
@@ -792,7 +261,7 @@
                     <span class="btn btn-outline">View Events</span>
                 </div>
             </a>
-            <a href="/awknwithin/awkn-ranch/#host" class="offering-card" id="host">
+            <a href="/awknwithin/awkn-ranch/collaborations.html" class="offering-card">
                 <img src="images/host.jpg" alt="Man performing spoken word poetry at an AWKN Ranch community event">
                 <div class="offering-card-overlay"></div>
                 <div class="offering-card-content">
@@ -804,7 +273,7 @@
     </section>
 
     <!-- VISION SECTION -->
-    <section class="vision-section" id="offerings">
+    <section class="vision-section">
         <div class="vision-grid">
             <div class="vision-image animate-on-scroll">
                 <img src="images/offerings.jpg" alt="AWKN Ranch natural interior space with warm lighting">
@@ -813,7 +282,7 @@
                 <h2>Our Vision</h2>
                 <p class="lead">At AWKN Ranch, we believe healing works best when the whole person is supported.</p>
                 <p>Our integrated approach brings together functional medicine, mental health support, psychedelic-assisted therapy, life coaching, wellness practices, and authentic community. Each element strengthens the others, creating a foundation for lasting transformation and growth.</p>
-                <a href="/awknwithin/awkn-ranch/#offerings" class="btn btn-primary">Our Offerings</a>
+                <a href="/awknwithin/awkn-ranch/offerings.html" class="btn btn-primary">Our Offerings</a>
             </div>
         </div>
     </section>
@@ -832,7 +301,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer id="membership">
+    <footer>
         <div class="footer-grid">
             <div class="footer-brand">
                 <img src="images/logo.png" alt="AWKN Ranch" class="footer-logo">
@@ -850,9 +319,9 @@
                 <h4>Navigate</h4>
                 <ul>
                     <li><a href="/awknwithin/awkn-ranch/">Home</a></li>
-                    <li><a href="/awknwithin/awkn-ranch/#events">Events</a></li>
-                    <li><a href="/awknwithin/awkn-ranch/#offerings">Offerings</a></li>
-                    <li><a href="/awknwithin/awkn-ranch/#membership">Membership</a></li>
+                    <li><a href="/awknwithin/awkn-ranch/events.html">Events</a></li>
+                    <li><a href="/awknwithin/awkn-ranch/offerings.html">Offerings</a></li>
+                    <li><a href="/awknwithin/awkn-ranch/membership.html">Membership</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -880,51 +349,6 @@
         </div>
     </footer>
 
-    <script>
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
-
-        // Mobile menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        hamburger.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-            const spans = hamburger.querySelectorAll('span');
-            if (mobileMenu.classList.contains('open')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-            } else {
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
-            }
-        });
-
-        // Close mobile menu on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                const spans = hamburger.querySelectorAll('span');
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '';
-                spans[2].style.transform = '';
-            });
-        });
-
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.15 });
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
