@@ -26,7 +26,18 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run build
+
+      - name: Build main site (basePath /awknwithin)
+        run: npm run build
+
+      - name: Build Within Center clone (basePath /awknwithin/within-center)
+        run: |
+          mv out out-main
+          sed -i 's|basePath: "/awknwithin"|basePath: "/awknwithin/within-center"|' next.config.ts
+          npm run build
+          mv out out-within
+          mv out-main out
+          mv out-within out/within-center
 
       - name: Copy static files into build output
         run: |
