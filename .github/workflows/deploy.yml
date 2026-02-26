@@ -32,6 +32,7 @@ jobs:
         run: |
           cp -r shared out/shared
           cp -r docs out/docs 2>/dev/null || true
+          cp -r awkn-ranch out/awkn-ranch
 
       - uses: actions/upload-pages-artifact@v3
         with:
