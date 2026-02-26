@@ -30,15 +30,21 @@ jobs:
       - name: Build main site (basePath /awknwithin)
         run: npm run build
 
-      - name: Build Within Center clone (basePath /awknwithin/within-center)
+      - name: Copy Within Center static site
         run: |
-          mv out out-main
-          sed -i 's|basePath: "/awknwithin"|basePath: "/awknwithin/within-center"|' next.config.ts
-          cp within-center/dictionaries/*.json src/i18n/dictionaries/
-          npm run build
-          mv out out-within
-          mv out-main out
-          mv out-within out/within-center
+          mkdir -p out/within-center
+          cp within-center/index.html out/within-center/
+          cp within-center/style-guide.html out/within-center/
+          cp -r within-center/css out/within-center/css
+          cp -r within-center/js out/within-center/js
+          cp -r within-center/images out/within-center/images 2>/dev/null || true
+          for dir in within-center/*/; do
+            dirname=$(basename "$dir")
+            if [ "$dirname" != "css" ] && [ "$dirname" != "js" ] && [ "$dirname" != "images" ] && [ "$dirname" != "dictionaries" ]; then
+              mkdir -p "out/within-center/$dirname"
+              cp -r "$dir"* "out/within-center/$dirname/" 2>/dev/null || true
+            fi
+          done
 
       - name: Copy static files into build output
         run: |
