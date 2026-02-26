@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Holistic Health and Wellness Retreat | AWKN Ranch</title>
+    <meta name="description" content="Become a member at AWKN Ranch. Access saunas, cold plunges, red light therapy, events, and more with our holistic wellness membership in Austin, TX.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Membership card */
+        .membership-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--color-white);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+            padding: 48px 40px;
+            text-align: center;
+        }
+        .membership-card .tier-name {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--color-brown-dark);
+            margin-bottom: 16px;
+        }
+        .membership-card .price-tag {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .membership-card .divider {
+            margin: 28px auto;
+        }
+        .membership-card .price-list {
+            text-align: left;
+            max-width: 380px;
+            margin: 0 auto 20px;
+        }
+        .membership-card .list-heading {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--color-text);
+            margin-top: 24px;
+            margin-bottom: 8px;
+            text-align: left;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .membership-card .btn {
+            margin-top: 32px;
+        }
+
+        /* Pricing cards for additional offerings */
+        .pricing-card {
+            background: var(--color-white);
+            box-shadow: var(--shadow);
+            padding: 36px 28px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+        .pricing-card h3 {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--color-brown-dark);
+            margin-bottom: 20px;
+        }
+        .pricing-card .price-line {
+            font-size: 14px;
+            color: var(--color-text-light);
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .pricing-card .price-line:last-child {
+            border-bottom: none;
+        }
+        .pricing-card .price-line strong {
+            color: var(--color-brown);
+        }
+        .pricing-card .price-line .note {
+            font-size: 12px;
+            color: var(--color-text-muted);
+        }
+
+        /* Note box for ketamine therapy */
+        .note-box {
+            max-width: 700px;
+            margin: 48px auto 0;
+            padding: 28px 32px;
+            background: var(--color-cream);
+            border-left: 3px solid var(--color-brown);
+            text-align: left;
+        }
+        .note-box p {
+            font-size: 15px;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+        .note-box a {
+            color: var(--color-brown);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .note-box a:hover {
+            color: var(--color-brown-dark);
+        }
+
+        .text-center { text-align: center; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <nav>
+            <a href="/awknwithin/awkn-ranch/" class="logo">
+                <img src="images/logo.png" alt="AWKN Ranch">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/awknwithin/awkn-ranch/">Home</a></li>
+                <li><a href="/awknwithin/awkn-ranch/events.html">Events</a></li>
+                <li><a href="/awknwithin/awkn-ranch/offerings.html">Offerings</a></li>
+                <li><a href="/awknwithin/awkn-ranch/membership.html" class="active">Membership</a></li>
+                <li class="nav-dropdown">
+                    <a href="#">Host An Event</a>
+                    <div class="dropdown-menu">
+                        <a href="/awknwithin/awkn-ranch/collaborations.html">Collaborate</a>
+                        <a href="/awknwithin/awkn-ranch/privatevents.html">Private</a>
+                    </div>
+                </li>
+                <li><a href="/awknwithin/awkn-ranch/connect.html">Connect</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="/awknwithin/awkn-ranch/">Home</a>
+        <a href="/awknwithin/awkn-ranch/events.html">Events</a>
+        <a href="/awknwithin/awkn-ranch/offerings.html">Offerings</a>
+        <a href="/awknwithin/awkn-ranch/membership.html">Membership</a>
+        <a href="/awknwithin/awkn-ranch/collaborations.html">Collaborate With AWKN</a>
+        <a href="/awknwithin/awkn-ranch/privatevents.html">Host A Private Event</a>
+        <a href="/awknwithin/awkn-ranch/connect.html">Connect</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-bg">
+            <img src="images/membership-hero.jpg" alt="AWKN Ranch membership wellness experience">
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-content">
+            <h1>Membership Tiers</h1>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="section section-cream">
+        <div class="container-narrow text-center">
+            <h2 style="font-family: var(--font-heading); font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; color: var(--color-brown-dark); line-height: 1.3; margin-bottom: 20px;">Join us at AWKN, where mind, body, and spirit come into harmony.</h2>
+            <p style="font-size: 16px; color: var(--color-text-light); line-height: 1.8; max-width: 750px; margin: 0 auto;">Our memberships invite you to embrace wellness as a way of being, offering access to transformative classes, advanced therapies, and restorative amenities. This space has been intentionally crafted to nurture balance, vitality, and renewal.</p>
+        </div>
+    </section>
+
+    <!-- MEMBERSHIP TIER -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Ideal Membership</h2>
+            </div>
+
+            <div class="membership-card animate-on-scroll">
+                <div class="tier-name">AWKN Body</div>
+                <span class="price-tag">$199 <span class="period">Monthly</span></span>
+                <div class="divider"></div>
+
+                <div class="list-heading">Unlimited Access During Open Hours:</div>
+                <ul class="price-list">
+                    <li>AWKN Events</li>
+                    <li>Saunas</li>
+                    <li>Cold Plunges</li>
+                    <li>Hot Tub</li>
+                    <li>Indoor &amp; Outdoor Showers</li>
+                    <li>Hammock Garden</li>
+                    <li>Pickleball Court</li>
+                </ul>
+
+                <div class="list-heading">Appointment-Based Access:</div>
+                <ul class="price-list">
+                    <li>Red Light Therapy</li>
+                    <li>Opus Beds</li>
+                </ul>
+
+                <div class="list-heading">Additional Benefits:</div>
+                <ul class="price-list">
+                    <li>1 Free Guest Pass Monthly</li>
+                    <li>10% off all services</li>
+                </ul>
+
+                <a href="https://awkn-ranch.recess.tv" class="btn btn-primary" target="_blank" rel="noopener">Sign Up</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADDITIONAL OFFERINGS -->
+    <section class="section section-cream">
+        <div class="container">
+            <div class="section-header">
+                <h2>Additional Offerings</h2>
+                <p>Available to both members and non-members</p>
+            </div>
+
+            <p style="text-align: center; font-size: 16px; color: var(--color-text-light); line-height: 1.8; max-width: 700px; margin: 0 auto 48px;" class="animate-on-scroll">Enhance your experience with our curated selection of wellness services. From rejuvenating IV therapy to invigorating pickleball sessions, there is something for everyone at AWKN Ranch.</p>
+
+            <div class="grid-3 animate-on-scroll">
+                <div class="pricing-card">
+                    <h3>IV Hydration</h3>
+                    <div class="price-line"><strong>5 IV Drips: $650</strong><br><span class="note">Normally $149 each</span></div>
+                    <div class="price-line"><strong>1 IV Drip: Starting at $149</strong></div>
+                </div>
+                <div class="pricing-card">
+                    <h3>Day Passes</h3>
+                    <div class="price-line"><strong>Non-Member Pass: $50</strong></div>
+                    <div class="price-line"><strong>Member Guest Pass: $40</strong></div>
+                </div>
+                <div class="pricing-card">
+                    <h3>Pickleball</h3>
+                    <div class="price-line"><strong>Private Lessons: $85/hr</strong></div>
+                    <div class="price-line"><strong>Group Lessons: $35/hr</strong></div>
+                    <div class="price-line"><strong>Court Rental: $40/hr</strong></div>
+                </div>
+            </div>
+
+            <div class="note-box animate-on-scroll">
+                <p><strong>Ceremonial Ketamine Therapy</strong> &mdash; We also offer guided ketamine-assisted therapy sessions through our partner program. Learn more at <a href="https://www.within.center" target="_blank" rel="noopener">www.within.center</a>.</p>
+            </div>
+
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="mailto:connect@awknranch.com" class="btn btn-outline-dark">Talk to a Team Member</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="AWKN Ranch" class="footer-logo">
+                <p>A wellness and retreat center in Austin, TX. Where consciousness meets community.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/awkn.ranch" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61571491650449" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="/awknwithin/awkn-ranch/">Home</a></li>
+                    <li><a href="/awknwithin/awkn-ranch/events.html">Events</a></li>
+                    <li><a href="/awknwithin/awkn-ranch/offerings.html">Offerings</a></li>
+                    <li><a href="/awknwithin/awkn-ranch/membership.html">Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:5125159924">512-515-9924</a></li>
+                    <li><a href="mailto:connect@awknranch.com">connect@awknranch.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <ul>
+                    <li>Mon&ndash;Fri: 9am&ndash;9pm</li>
+                    <li>Saturday: 9am&ndash;8pm</li>
+                    <li>Sunday: 10am&ndash;6pm</li>
+                </ul>
+                <h4 style="margin-top: 24px;">Location</h4>
+                <ul>
+                    <li><a href="https://maps.google.com/?q=7600+Stillridge+Dr+Austin+TX+78736" target="_blank" rel="noopener">7600 Stillridge Dr<br>Austin, TX 78736</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AWKN Ranch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
