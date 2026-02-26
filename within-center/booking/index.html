@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Session - Within Center</title>
+  <meta name="description" content="Schedule your ketamine-assisted therapy session at Within Center in Austin, TX.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <section class="hero hero--short">
+    <div class="hero__content">
+      <h1 class="hero__title">Book Your Session</h1>
+      <p class="hero__description">Begin your healing journey by selecting a package and scheduling your first session.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="booking-container">
+        <!-- Progress Steps -->
+        <div class="booking-progress">
+          <div class="booking-progress__step booking-progress__step--active">
+            <span class="booking-progress__number">1</span>
+            <span class="booking-progress__label">Package</span>
+          </div>
+          <div class="booking-progress__line"></div>
+          <div class="booking-progress__step">
+            <span class="booking-progress__number">2</span>
+            <span class="booking-progress__label">Date</span>
+          </div>
+          <div class="booking-progress__line"></div>
+          <div class="booking-progress__step">
+            <span class="booking-progress__number">3</span>
+            <span class="booking-progress__label">Time</span>
+          </div>
+          <div class="booking-progress__line"></div>
+          <div class="booking-progress__step">
+            <span class="booking-progress__number">4</span>
+            <span class="booking-progress__label">Info</span>
+          </div>
+          <div class="booking-progress__line"></div>
+          <div class="booking-progress__step">
+            <span class="booking-progress__number">5</span>
+            <span class="booking-progress__label">Confirm</span>
+          </div>
+        </div>
+
+        <!-- Dynamic content rendered by booking.js -->
+        <div id="booking-content"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/shared.js"></script>
+  <script src="../js/booking.js"></script>
+</body>
+</html>

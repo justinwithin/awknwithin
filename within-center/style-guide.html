@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Guide - Within Center</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .sg-section { padding: 3rem 0; border-bottom: 1px solid #e2e8e5; }
+    .sg-section h2 { margin-bottom: 1.5rem; font-size: 1.8rem; }
+    .sg-section h3 { margin-bottom: 1rem; font-size: 1.2rem; color: #4a5a52; }
+    .sg-colors { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .sg-color { width: 140px; }
+    .sg-color__swatch { height: 80px; border-radius: 8px; margin-bottom: 8px; border: 1px solid #e2e8e5; }
+    .sg-color__name { font-size: 0.85rem; font-weight: 600; }
+    .sg-color__hex { font-size: 0.8rem; color: #8a9a92; }
+    .sg-type-sample { margin-bottom: 1rem; }
+    .sg-buttons { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .sg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  </style>
+</head>
+<body style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+
+  <h1>Within Center — Style Guide</h1>
+  <p style="color: #8a9a92; margin-bottom: 2rem;">Brand identity and design system reference. Last updated February 2026.</p>
+
+  <!-- COLORS -->
+  <div class="sg-section">
+    <h2>Colors</h2>
+
+    <h3>Primary Palette</h3>
+    <div class="sg-colors">
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#379676;"></div>
+        <div class="sg-color__name">Green Primary</div>
+        <div class="sg-color__hex">#379676</div>
+      </div>
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#91e1b3;"></div>
+        <div class="sg-color__name">Green Light</div>
+        <div class="sg-color__hex">#91e1b3</div>
+      </div>
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#205449;"></div>
+        <div class="sg-color__name">Green Dark</div>
+        <div class="sg-color__hex">#205449</div>
+      </div>
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#2c6a5c;"></div>
+        <div class="sg-color__name">Green Hover</div>
+        <div class="sg-color__hex">#2c6a5c</div>
+      </div>
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:linear-gradient(135deg,#379676,#91e1b3);"></div>
+        <div class="sg-color__name">Gradient</div>
+        <div class="sg-color__hex">#379676 → #91e1b3</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem;">Accent Colors</h3>
+    <div class="sg-colors">
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#A886CD;"></div>
+        <div class="sg-color__name">Purple</div>
+        <div class="sg-color__hex">#A886CD</div>
+      </div>
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#D4A843;"></div>
+        <div class="sg-color__name">Gold</div>
+        <div class="sg-color__hex">#D4A843</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem;">Neutrals</h3>
+    <div class="sg-colors">
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#ffffff;"></div>
+        <div class="sg-color__name">White</div>
+        <div class="sg-color__hex">#FFFFFF</div>
+      </div>
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#f8faf9;"></div>
+        <div class="sg-color__name">Off White</div>
+        <div class="sg-color__hex">#F8FAF9</div>
+      </div>
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#f3f5f4;"></div>
+        <div class="sg-color__name">Gray Lightest</div>
+        <div class="sg-color__hex">#F3F5F4</div>
+      </div>
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#e2e8e5;"></div>
+        <div class="sg-color__name">Gray Light</div>
+        <div class="sg-color__hex">#E2E8E5</div>
+      </div>
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#8a9a92;"></div>
+        <div class="sg-color__name">Gray Medium</div>
+        <div class="sg-color__hex">#8A9A92</div>
+      </div>
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#4a5a52;"></div>
+        <div class="sg-color__name">Gray Dark</div>
+        <div class="sg-color__hex">#4A5A52</div>
+      </div>
+      <div class="sg-color">
+        <div class="sg-color__swatch" style="background:#1a2a22;"></div>
+        <div class="sg-color__name">Dark</div>
+        <div class="sg-color__hex">#1A2A22</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <div class="sg-section">
+    <h2>Typography</h2>
+    <p style="margin-bottom:2rem;">Primary font: <strong>Poppins</strong> (Google Fonts) — used for all headings and body text.</p>
+
+    <div class="sg-type-sample">
+      <h1>Heading 1 — The quick brown fox (clamp 2rem-3.5rem)</h1>
+    </div>
+    <div class="sg-type-sample">
+      <h2>Heading 2 — The quick brown fox (clamp 1.5rem-2.5rem)</h2>
+    </div>
+    <div class="sg-type-sample">
+      <h3>Heading 3 — The quick brown fox (clamp 1.25rem-1.75rem)</h3>
+    </div>
+    <div class="sg-type-sample">
+      <h4>Heading 4 — The quick brown fox (1.25rem)</h4>
+    </div>
+    <div class="sg-type-sample">
+      <p>Body text — The quick brown fox jumps over the lazy dog. Font size 16px, line-height 1.6, color Gray Dark (#4A5A52).</p>
+    </div>
+    <div class="sg-type-sample">
+      <p style="font-size:0.85rem;color:#8a9a92;">Small text — Supporting text at 0.85rem, Gray Medium (#8A9A92).</p>
+    </div>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="sg-section">
+    <h2>Buttons</h2>
+    <div class="sg-buttons">
+      <a href="#" class="btn btn--primary">Primary Button</a>
+      <a href="#" class="btn btn--outline">Outline Button</a>
+      <a href="#" class="btn btn--primary btn--sm">Small Primary</a>
+      <a href="#" class="btn btn--primary btn--lg">Large Primary</a>
+    </div>
+    <div class="sg-buttons" style="margin-top:1rem;background:var(--wc-green-gradient);padding:2rem;border-radius:12px;">
+      <a href="#" class="btn btn--white">White Button</a>
+      <a href="#" class="btn btn--secondary">Secondary Button</a>
+    </div>
+  </div>
+
+  <!-- CARDS -->
+  <div class="sg-section">
+    <h2>Cards</h2>
+    <div class="sg-grid">
+      <div class="card">
+        <div class="card__body">
+          <div class="card__icon">&#10024;</div>
+          <h3 class="card__title">Card Title</h3>
+          <p class="card__text">Card body text describing the feature or service.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">&#128172;</div>
+        <h3 class="service-card__title">Service Card</h3>
+        <p class="service-card__text">Service description with top border accent.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="sg-section">
+    <h2>Pricing Cards</h2>
+    <div class="pricing-grid" style="max-width:700px;">
+      <div class="pricing-card pricing-card--featured">
+        <div class="pricing-card__name">AWAKEN</div>
+        <div class="pricing-card__tagline">Come Fully Home to You</div>
+        <div class="pricing-card__price">$5,900</div>
+        <ul class="pricing-card__features">
+          <li>6 Private Guided Ketamine Ceremonies</li>
+          <li>6 Integration Sessions</li>
+          <li>2 Month Membership to AWKN Ranch</li>
+        </ul>
+        <a href="#" class="btn btn--primary">Book this package</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-card__name">HEAL</div>
+        <div class="pricing-card__tagline">Heal Your Nervous System</div>
+        <div class="pricing-card__price">$3,900</div>
+        <ul class="pricing-card__features">
+          <li>3 Private Guided Ketamine Ceremonies</li>
+          <li>3 Integration Sessions</li>
+          <li>1 Month Membership</li>
+        </ul>
+        <a href="#" class="btn btn--primary">Book this package</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM ELEMENTS -->
+  <div class="sg-section">
+    <h2>Form Elements</h2>
+    <form class="form-grid" style="max-width:600px;" onsubmit="event.preventDefault();">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="John">
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Doe">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="john@example.com">
+      </div>
+      <div class="form-group">
+        <label>State</label>
+        <select><option>Texas</option><option>California</option></select>
+      </div>
+      <div class="form-group form-group--full">
+        <label>Message</label>
+        <textarea placeholder="Your message..."></textarea>
+      </div>
+      <div class="form-group form-group--full">
+        <button class="btn btn--primary">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- SPACING & LAYOUT -->
+  <div class="sg-section">
+    <h2>Spacing Scale</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-end;">
+      <div style="text-align:center;">
+        <div style="width:4px;height:4px;background:#379676;margin:0 auto 4px;"></div>
+        <span style="font-size:0.75rem;">xs (4px)</span>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:8px;height:8px;background:#379676;margin:0 auto 4px;"></div>
+        <span style="font-size:0.75rem;">sm (8px)</span>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:16px;height:16px;background:#379676;margin:0 auto 4px;"></div>
+        <span style="font-size:0.75rem;">md (16px)</span>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:24px;height:24px;background:#379676;margin:0 auto 4px;"></div>
+        <span style="font-size:0.75rem;">lg (24px)</span>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:32px;height:32px;background:#379676;margin:0 auto 4px;"></div>
+        <span style="font-size:0.75rem;">xl (32px)</span>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:48px;height:48px;background:#379676;margin:0 auto 4px;"></div>
+        <span style="font-size:0.75rem;">2xl (48px)</span>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:64px;height:64px;background:#379676;margin:0 auto 4px;"></div>
+        <span style="font-size:0.75rem;">3xl (64px)</span>
+      </div>
+      <div style="text-align:center;">
+        <div style="width:96px;height:96px;background:#379676;margin:0 auto 4px;"></div>
+        <span style="font-size:0.75rem;">4xl (96px)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRAND INFO -->
+  <div class="sg-section">
+    <h2>Brand Information</h2>
+    <div class="sg-grid">
+      <div>
+        <h3>Legal Entity</h3>
+        <p>Hearth Space Health, Inc.</p>
+        <h3 style="margin-top:1rem;">Address</h3>
+        <p>7600 Stillridge Dr, Austin, Texas 78736</p>
+        <h3 style="margin-top:1rem;">Phone</h3>
+        <p>(512) 515-9434</p>
+        <h3 style="margin-top:1rem;">Email</h3>
+        <p>intake@within.center</p>
+        <h3 style="margin-top:1rem;">Hours</h3>
+        <p>Monday - Friday: 9am - 6pm | Intake: 24/7</p>
+      </div>
+      <div>
+        <h3>Logo</h3>
+        <div style="background:#1a2a22;padding:2rem;border-radius:8px;display:inline-flex;align-items:center;gap:8px;color:white;font-size:1.4rem;font-weight:700;">
+          <svg viewBox="0 0 36 36" fill="none" width="36" height="36">
+            <circle cx="18" cy="18" r="18" fill="#379676"/>
+            <path d="M10 14 L18 26 L26 14" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M14 14 L18 20 L22 14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.6"/>
+          </svg>
+          Within Center
+        </div>
+        <div style="background:#f8faf9;padding:2rem;border-radius:8px;display:inline-flex;align-items:center;gap:8px;color:#205449;font-size:1.4rem;font-weight:700;margin-top:1rem;">
+          <svg viewBox="0 0 36 36" fill="none" width="36" height="36">
+            <circle cx="18" cy="18" r="18" fill="#379676"/>
+            <path d="M10 14 L18 26 L26 14" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M14 14 L18 20 L22 14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.6"/>
+          </svg>
+          Within Center
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
