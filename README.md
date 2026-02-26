@@ -15,37 +15,60 @@ A starter template for building full-stack business platforms with Claude Code. 
 - **Cloud Server** — Any VPS provider: DigitalOcean, Hostinger, AWS EC2, Google Cloud ($4-12/mo)
 - **AI Developer** — Claude Code (builds and manages everything)
 
+## Prerequisites
+
+Before starting, make sure you have:
+
+| Tool | Install |
+|------|---------|
+| **Git** | [git-scm.com/downloads](https://git-scm.com/downloads) (Mac has it built in) |
+| **Node.js** | [nodejs.org](https://nodejs.org/) |
+| **Claude Code** | [docs.anthropic.com/claude-code](https://docs.anthropic.com/en/docs/claude-code/overview) |
+| **GitHub account** | [github.com/signup](https://github.com/signup) (free) |
+
+Quick check — paste into your terminal:
+```bash
+git --version && node --version && claude --version
+```
+All three should print version numbers.
+
 ## Quick start
 
-1. **Clone this repo** — replace `my-project` with your project name (this will also become your GitHub repo name, so pick something unique — lowercase, hyphens, no spaces):
-   ```bash
-   git clone https://github.com/rsonnad/alpacapps-infra.git my-project
-   cd my-project
-   ```
+**1. Clone this repo** — replace `my-project` with your project name (lowercase, hyphens, no spaces):
+```bash
+git clone https://github.com/rsonnad/alpacapps-infra.git my-project
+cd my-project
+```
 
-2. **Open in Claude Code** (desktop app or CLI):
-   ```bash
-   claude
-   ```
+**2. Open Claude Code** — you must be inside the project folder:
+```bash
+claude
+```
 
-3. **Run the setup skill**:
-   ```
-   /setup-alpacapps-infra
-   ```
+**3. Run the setup wizard:**
+```
+/setup-alpacapps-infra
+```
 
-Claude will create your own GitHub repo, disconnect from this starter template, then walk you through setting up each service interactively — creating your database, deploying edge functions, configuring webhooks, and building your CLAUDE.md.
+That's it. Claude creates your own GitHub repo, disconnects from this template, walks you through setting up each service, and pushes everything live.
+
+> **⚠️ "Skill not found"?** You're not inside the cloned folder. The skill lives at `.claude/skills/` inside the project. Run `pwd` to check, then `cd my-project` if needed.
 
 ## What happens during setup
 
-The setup skill will:
+The setup wizard will:
 1. Ask what you're building and which services you need
-2. Create a new GitHub repo under your account (using the folder name you chose)
+2. Create a new GitHub repo under your account
 3. Disconnect from the `alpacapps-infra` template origin
 4. Customize the codebase for your organization (branding, basePath, i18n)
 5. Set up Supabase (create org + project), deploy edge functions, configure webhooks
 6. Scaffold login/auth system and admin CRUD pages for your entities
 7. Build your `CLAUDE.md` with all credentials and connection details
 8. Push everything to your new repo — your site goes live on GitHub Pages
+
+## After setup
+
+Every new Claude Code session automatically reads your `CLAUDE.md` and knows your entire stack — database schema, API keys, deployment flow, everything. Just tell Claude what to build.
 
 ## Customization
 
@@ -58,9 +81,10 @@ See [CUSTOMIZATION.md](CUSTOMIZATION.md) for a detailed guide on what gets custo
 - **Hosting:** GitHub Pages (static export)
 - **i18n:** Dictionary-based multi-language support (English, Spanish, French by default)
 
-## Full guide
+## Guides
 
-Read the complete infrastructure guide at: https://rsonnad.github.io/alpacapps/docs/alpacappsinfra.html
+- **[Getting Started](https://alpacaplayhouse.com/docs/getting-started.html)** — Visual step-by-step walkthrough
+- **[Full Infrastructure Guide](https://alpacaplayhouse.com/docs/alpacappsinfra.html)** — Detailed service-by-service setup reference
 
 ## License
 
