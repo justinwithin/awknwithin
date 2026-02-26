@@ -23,12 +23,12 @@ AWKNWithin is a dual-brand platform managing two related wellness properties:
 **Tech Stack:**
 - Frontend: Next.js 16 (React 19, TypeScript, Tailwind CSS)
 - Backend: Supabase (PostgreSQL + Storage + Auth)
-- Hosting: GitHub Pages (static export)
+- Hosting: GitHub Pages (static export) → custom domain: www.within.center
 - i18n: Dictionary-based multi-language support
 
 **Live URLs:**
-- Public site: https://justinwithin.github.io/awknwithin/
-- Intranet: https://justinwithin.github.io/awknwithin/en/intranet/
+- Public site: https://www.within.center/
+- Intranet: https://www.within.center/en/intranet/
 
 ## Deployment
 
