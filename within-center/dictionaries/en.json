@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "title": "Within Center",
+    "description": "Psychedelic-assisted therapy and integration retreat center"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "programs": "Programs",
+    "contact": "Contact",
+    "signIn": "Sign In",
+    "intranet": "Intranet"
+  },
+  "home": {
+    "hero": {
+      "title": "Within Center",
+      "subtitle": "Healing through connection, guided by compassion",
+      "cta": "Explore Our Programs"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Within Center provides a safe, supportive environment for psychedelic-assisted therapy and integration. We guide individuals through transformative healing experiences with clinical care, community support, and lasting integration."
+    }
+  },
+  "about": {
+    "title": "About Within Center",
+    "description": "A retreat center dedicated to psychedelic-assisted therapy, integration support, and holistic healing.",
+    "history": {
+      "title": "Our Approach",
+      "content": "Within Center combines evidence-based psychedelic-assisted therapy with personalized integration support. Our experienced practitioners create a safe container for deep healing work, honoring each participant's unique journey toward wholeness."
+    }
+  },
+  "programs": {
+    "title": "Our Programs",
+    "description": "Explore the retreats and therapeutic services we offer at Within Center.",
+    "list": [
+      {
+        "title": "Guided Retreats",
+        "description": "Multi-day psychedelic-assisted therapy retreats with comprehensive preparation, ceremony, and integration support."
+      },
+      {
+        "title": "Integration Sessions",
+        "description": "One-on-one and group sessions to help you process, integrate, and apply insights from your healing experiences."
+      },
+      {
+        "title": "Therapy Services",
+        "description": "Individual therapy sessions with experienced practitioners specializing in psychedelic-assisted modalities."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Reach out to learn more about our programs or to begin your healing journey.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "language": "Language"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "title": "Within Center",
+    "description": "Centro de retiros de terapia asistida con psicodélicos e integración"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "programs": "Programas",
+    "contact": "Contacto",
+    "signIn": "Iniciar Sesión",
+    "intranet": "Intranet"
+  },
+  "home": {
+    "hero": {
+      "title": "Within Center",
+      "subtitle": "Sanación a través de la conexión, guiada por la compasión",
+      "cta": "Explora Nuestros Programas"
+    },
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Within Center ofrece un entorno seguro y de apoyo para la terapia asistida con psicodélicos y la integración. Guiamos a las personas a través de experiencias de sanación transformadoras con atención clínica, apoyo comunitario e integración duradera."
+    }
+  },
+  "about": {
+    "title": "Sobre Within Center",
+    "description": "Un centro de retiros dedicado a la terapia asistida con psicodélicos, apoyo de integración y sanación holística.",
+    "history": {
+      "title": "Nuestro Enfoque",
+      "content": "Within Center combina la terapia asistida con psicodélicos basada en evidencia con apoyo de integración personalizado. Nuestros practicantes experimentados crean un espacio seguro para el trabajo de sanación profunda, honrando el viaje único de cada participante hacia la plenitud."
+    }
+  },
+  "programs": {
+    "title": "Nuestros Programas",
+    "description": "Explora los retiros y servicios terapéuticos que ofrecemos en Within Center.",
+    "list": [
+      {
+        "title": "Retiros Guiados",
+        "description": "Retiros de terapia asistida con psicodélicos de varios días con preparación integral, ceremonia y apoyo de integración."
+      },
+      {
+        "title": "Sesiones de Integración",
+        "description": "Sesiones individuales y grupales para ayudarte a procesar, integrar y aplicar las percepciones de tus experiencias de sanación."
+      },
+      {
+        "title": "Servicios de Terapia",
+        "description": "Sesiones de terapia individual con practicantes experimentados especializados en modalidades asistidas con psicodélicos."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "description": "Comunícate para conocer más sobre nuestros programas o para comenzar tu camino de sanación.",
+    "form": {
+      "name": "Tu Nombre",
+      "email": "Tu Correo Electrónico",
+      "message": "Tu Mensaje",
+      "submit": "Enviar Mensaje"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "language": "Idioma"
+  }
+}

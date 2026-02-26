@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "title": "Within Center",
+    "description": "Centre de retraite de thérapie assistée par psychédéliques et intégration"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "programs": "Programmes",
+    "contact": "Contact",
+    "signIn": "Connexion",
+    "intranet": "Intranet"
+  },
+  "home": {
+    "hero": {
+      "title": "Within Center",
+      "subtitle": "Guérison par la connexion, guidée par la compassion",
+      "cta": "Découvrir Nos Programmes"
+    },
+    "mission": {
+      "title": "Notre Mission",
+      "description": "Within Center offre un environnement sûr et bienveillant pour la thérapie assistée par psychédéliques et l'intégration. Nous guidons les individus à travers des expériences de guérison transformatrices avec des soins cliniques, un soutien communautaire et une intégration durable."
+    }
+  },
+  "about": {
+    "title": "À Propos de Within Center",
+    "description": "Un centre de retraite dédié à la thérapie assistée par psychédéliques, au soutien d'intégration et à la guérison holistique.",
+    "history": {
+      "title": "Notre Approche",
+      "content": "Within Center combine la thérapie assistée par psychédéliques fondée sur des preuves avec un soutien d'intégration personnalisé. Nos praticiens expérimentés créent un espace sûr pour un travail de guérison profond, honorant le parcours unique de chaque participant vers la plénitude."
+    }
+  },
+  "programs": {
+    "title": "Nos Programmes",
+    "description": "Découvrez les retraites et services thérapeutiques que nous offrons au Within Center.",
+    "list": [
+      {
+        "title": "Retraites Guidées",
+        "description": "Retraites de thérapie assistée par psychédéliques de plusieurs jours avec préparation complète, cérémonie et soutien d'intégration."
+      },
+      {
+        "title": "Séances d'Intégration",
+        "description": "Séances individuelles et en groupe pour vous aider à traiter, intégrer et appliquer les insights de vos expériences de guérison."
+      },
+      {
+        "title": "Services de Thérapie",
+        "description": "Séances de thérapie individuelle avec des praticiens expérimentés spécialisés dans les modalités assistées par psychédéliques."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactez-Nous",
+    "description": "Contactez-nous pour en savoir plus sur nos programmes ou pour commencer votre parcours de guérison.",
+    "form": {
+      "name": "Votre Nom",
+      "email": "Votre E-mail",
+      "message": "Votre Message",
+      "submit": "Envoyer le Message"
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "language": "Langue"
+  }
+}
