@@ -1,9 +1,9 @@
 {
-  "version": "v260227.01 12:46pm",
-  "release": 1,
-  "sha": "69c3525",
-  "fullSha": "69c35253a6e70307b630f564e78f53cdc6d708ea",
+  "version": "v260227.02 12:52pm",
+  "release": 2,
+  "sha": "2fd9476",
+  "fullSha": "2fd9476da65da4148f8eb669efe0589c14013532",
   "actor": "justinwithin",
-  "pushedAt": "2026-02-27T18:46:16Z",
-  "commits": [{"sha": "69c3525", "message": "feat: add automatic version tracking", "author": "Justin DeLaCruz"}]
+  "pushedAt": "2026-02-27T18:52:11Z",
+  "commits": [{"sha": "2fd9476", "message": "Add Day Pass landing page with pricing, amenities, and booking", "author": "Justin DeLaCruz"}]
 }
