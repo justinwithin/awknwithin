@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Pass | AWKN Ranch - Wellness Retreat in Austin, TX</title>
+    <meta name="description" content="Book a day pass to AWKN Ranch. Access saunas, cold plunges, hot tub, hammock garden, pickleball, fire pit, and more. $50 non-member / $40 member guest.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Day Pass page-specific styles */
+        .pricing-hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .pricing-hero-bg {
+            position: absolute; inset: 0;
+        }
+        .pricing-hero-bg img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .pricing-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(26,26,26,0.75) 0%, rgba(26,26,26,0.4) 100%);
+        }
+        .pricing-hero-content {
+            position: relative; z-index: 2;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 120px var(--gutter) 80px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .pricing-hero-text {
+            animation: fadeInUp 1.2s ease 0.2s both;
+        }
+        .pricing-hero-text .eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 16px;
+        }
+        .pricing-hero-text h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(40px, 5vw, 68px);
+            font-weight: 300;
+            color: var(--color-white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .pricing-hero-text .lead {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        .pricing-hero-text .hours-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(8px);
+            padding: 10px 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 0.5px;
+        }
+        .hours-badge svg {
+            width: 16px; height: 16px;
+            fill: none; stroke: rgba(255,255,255,0.7);
+            stroke-width: 2;
+        }
+
+        /* Pricing card floating on hero */
+        .pricing-card-wrapper {
+            animation: fadeInUp 1.2s ease 0.5s both;
+        }
+        .pricing-card {
+            background: var(--color-white);
+            padding: 48px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .pricing-card .card-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: 8px;
+        }
+        .pricing-card .price {
+            font-family: var(--font-heading);
+            font-size: 64px;
+            font-weight: 300;
+            color: var(--color-brown);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .pricing-card .price-note {
+            font-size: 14px;
+            color: var(--color-text-muted);
+            margin-bottom: 28px;
+        }
+        .pricing-card .divider {
+            width: 40px;
+            margin: 0 auto 24px;
+        }
+        .pricing-card .includes-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: 16px;
+        }
+        .pricing-card .includes-list {
+            text-align: left;
+            margin-bottom: 32px;
+        }
+        .pricing-card .includes-list li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .pricing-card .includes-list li::before {
+            content: '';
+            display: block;
+            width: 18px; height: 18px;
+            min-width: 18px;
+            background: var(--color-cream);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%236B4226' stroke-width='3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+            background-size: 12px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .pricing-card .btn { width: 100%; text-align: center; }
+        .pricing-card .guest-price {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--color-text-muted);
+        }
+
+        /* Amenities showcase */
+        .amenity-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .amenity-item {
+            position: relative;
+            height: 320px;
+            overflow: hidden;
+        }
+        .amenity-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .amenity-item:hover img { transform: scale(1.08); }
+        .amenity-item-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(26,26,26,0.65) 0%, transparent 50%);
+        }
+        .amenity-item-label {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 24px;
+            z-index: 2;
+        }
+        .amenity-item-label h3 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--color-white);
+            margin-bottom: 4px;
+        }
+        .amenity-item-label p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* What to expect */
+        .expect-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        .expect-item {
+            padding: 48px 36px;
+            border-right: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .expect-item:nth-child(3n) { border-right: none; }
+        .expect-item:nth-child(n+4) { border-bottom: none; }
+        .expect-icon {
+            width: 48px; height: 48px;
+            margin-bottom: 20px;
+            color: var(--color-brown);
+        }
+        .expect-icon svg {
+            width: 100%; height: 100%;
+            fill: none; stroke: var(--color-brown);
+            stroke-width: 1.5;
+        }
+        .expect-item h3 {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--color-brown-dark);
+            margin-bottom: 12px;
+        }
+        .expect-item p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        /* Membership upsell */
+        .upsell-banner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+        .upsell-text h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 3vw, 44px);
+            font-weight: 300;
+            color: var(--color-brown-dark);
+            margin-bottom: 16px;
+        }
+        .upsell-text p {
+            font-size: 16px;
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+        .upsell-text .savings {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-style: italic;
+            color: var(--color-brown);
+            margin-bottom: 28px;
+        }
+        .upsell-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .compare-box {
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .compare-box.highlight {
+            background: var(--color-brown);
+            color: var(--color-white);
+        }
+        .compare-box .compare-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .compare-box.highlight .compare-label { color: rgba(255,255,255,0.7); }
+        .compare-box .compare-price {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 4px;
+        }
+        .compare-box:not(.highlight) {
+            background: var(--color-cream);
+            color: var(--color-text);
+        }
+        .compare-box:not(.highlight) .compare-price { color: var(--color-text-muted); }
+        .compare-box .compare-detail {
+            font-size: 13px;
+        }
+        .compare-box.highlight .compare-detail { color: rgba(255,255,255,0.7); }
+        .compare-box:not(.highlight) .compare-detail { color: var(--color-text-muted); }
+
+        /* Add-ons */
+        .addon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .addon-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            padding: 32px 28px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .addon-card:hover {
+            border-color: var(--color-brown);
+            box-shadow: 0 4px 20px rgba(107,66,38,0.1);
+        }
+        .addon-card h3 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--color-brown-dark);
+            margin-bottom: 8px;
+        }
+        .addon-card .addon-price {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--color-brown);
+            margin-bottom: 12px;
+        }
+        .addon-card p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .pricing-hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .amenity-strip { grid-template-columns: repeat(2, 1fr); }
+            .expect-grid { grid-template-columns: repeat(2, 1fr); }
+            .expect-item:nth-child(3n) { border-right: 1px solid var(--color-border); }
+            .expect-item:nth-child(2n) { border-right: none; }
+            .expect-item:nth-child(n+5) { border-bottom: none; }
+            .upsell-banner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .pricing-hero { min-height: auto; }
+            .pricing-hero-content { padding: 120px var(--gutter) 60px; }
+            .pricing-card { padding: 36px 28px; }
+            .amenity-strip { grid-template-columns: 1fr 1fr; }
+            .amenity-item { height: 240px; }
+            .expect-grid { grid-template-columns: 1fr; }
+            .expect-item { border-right: none !important; border-bottom: 1px solid var(--color-border) !important; }
+            .expect-item:last-child { border-bottom: none !important; }
+            .addon-grid { grid-template-columns: 1fr; }
+            .upsell-compare { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <nav>
+            <a href="/awknwithin/awkn-ranch/" class="logo">
+                <img src="images/logo.png" alt="AWKN Ranch">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/awknwithin/awkn-ranch/">Home</a></li>
+                <li><a href="/awknwithin/awkn-ranch/events.html">Events</a></li>
+                <li><a href="/awknwithin/awkn-ranch/offerings.html">Offerings</a></li>
+                <li><a href="/awknwithin/awkn-ranch/membership.html">Membership</a></li>
+                <li class="nav-dropdown">
+                    <a href="#">Host An Event</a>
+                    <div class="dropdown-menu">
+                        <a href="/awknwithin/awkn-ranch/collaborations.html">Collaborate With AWKN</a>
+                        <a href="/awknwithin/awkn-ranch/privatevents.html">Host A Private Event</a>
+                    </div>
+                </li>
+                <li><a href="/awknwithin/awkn-ranch/connect.html">Connect</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="/awknwithin/awkn-ranch/">Home</a>
+        <a href="/awknwithin/awkn-ranch/events.html">Events</a>
+        <a href="/awknwithin/awkn-ranch/offerings.html">Offerings</a>
+        <a href="/awknwithin/awkn-ranch/membership.html">Membership</a>
+        <a href="/awknwithin/awkn-ranch/collaborations.html">Collaborate With AWKN</a>
+        <a href="/awknwithin/awkn-ranch/privatevents.html">Host A Private Event</a>
+        <a href="/awknwithin/awkn-ranch/connect.html">Connect</a>
+    </div>
+
+    <!-- HERO WITH PRICING CARD -->
+    <section class="pricing-hero">
+        <div class="pricing-hero-bg">
+            <img src="images/hero.jpg" alt="AWKN Ranch rustic interior with natural light">
+        </div>
+        <div class="pricing-hero-overlay"></div>
+        <div class="pricing-hero-content">
+            <div class="pricing-hero-text">
+                <p class="eyebrow">AWKN Ranch &bull; Austin, TX</p>
+                <h1>Spend the Day at the Ranch</h1>
+                <p class="lead">A full day of wellness, nature, and community in the Texas Hill Country. Access saunas, cold plunges, hot tub, hammock garden, pickleball, and more.</p>
+                <div class="hours-badge">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    Open daily &mdash; Mon&ndash;Fri 9am&ndash;9pm &bull; Sat 9am&ndash;8pm &bull; Sun 10am&ndash;6pm
+                </div>
+            </div>
+            <div class="pricing-card-wrapper">
+                <div class="pricing-card">
+                    <p class="card-label">Day Pass</p>
+                    <p class="price">$50</p>
+                    <p class="price-note">per person &bull; full day access</p>
+                    <div class="divider"></div>
+                    <p class="includes-label">Includes</p>
+                    <ul class="includes-list">
+                        <li>Dry saunas</li>
+                        <li>Cold plunges</li>
+                        <li>Hot tub</li>
+                        <li>Indoor &amp; outdoor showers</li>
+                        <li>Hammock garden</li>
+                        <li>Pickleball court</li>
+                        <li>Fire pit &amp; gathering spaces</li>
+                        <li>Access to scheduled events</li>
+                    </ul>
+                    <a href="https://awkn-ranch.recess.tv/embed/checkout/package/51934c17-2644-4482-ba8b-6b20107de915" class="btn btn-primary" target="_blank" rel="noopener">Book Your Day Pass</a>
+                    <p class="guest-price">Member guest pass: $40</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AMENITY PHOTO STRIP -->
+    <section class="amenity-strip">
+        <div class="amenity-item">
+            <img src="images/sauna.jpg" alt="Dry sauna at AWKN Ranch">
+            <div class="amenity-item-overlay"></div>
+            <div class="amenity-item-label">
+                <h3>Saunas</h3>
+                <p>Included</p>
+            </div>
+        </div>
+        <div class="amenity-item">
+            <img src="images/contrast.jpg" alt="Cold plunge contrast therapy">
+            <div class="amenity-item-overlay"></div>
+            <div class="amenity-item-label">
+                <h3>Cold Plunges</h3>
+                <p>Included</p>
+            </div>
+        </div>
+        <div class="amenity-item">
+            <img src="images/hammock.jpg" alt="Hammock garden nestled in trees">
+            <div class="amenity-item-overlay"></div>
+            <div class="amenity-item-label">
+                <h3>Hammock Garden</h3>
+                <p>Included</p>
+            </div>
+        </div>
+        <div class="amenity-item">
+            <img src="images/firepit.jpg" alt="Fire pit gathering space">
+            <div class="amenity-item-overlay"></div>
+            <div class="amenity-item-label">
+                <h3>Fire Pit</h3>
+                <p>Included</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECOND ROW AMENITIES -->
+    <section class="amenity-strip">
+        <div class="amenity-item">
+            <img src="images/offerings-pickleball.jpg" alt="Pickleball court at AWKN Ranch">
+            <div class="amenity-item-overlay"></div>
+            <div class="amenity-item-label">
+                <h3>Pickleball</h3>
+                <p>Included</p>
+            </div>
+        </div>
+        <div class="amenity-item">
+            <img src="images/temple.jpg" alt="Temple meditation space">
+            <div class="amenity-item-overlay"></div>
+            <div class="amenity-item-label">
+                <h3>Temple Space</h3>
+                <p>Included</p>
+            </div>
+        </div>
+        <div class="amenity-item">
+            <img src="images/offerings.jpg" alt="Opus Sound Beds in geodome">
+            <div class="amenity-item-overlay"></div>
+            <div class="amenity-item-label">
+                <h3>Opus Sound Beds</h3>
+                <p>By Appointment</p>
+            </div>
+        </div>
+        <div class="amenity-item">
+            <img src="images/wellness-center.jpg" alt="AWKN Wellness Center">
+            <div class="amenity-item-overlay"></div>
+            <div class="amenity-item-label">
+                <h3>Wellness Center</h3>
+                <p>By Appointment</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT TO EXPECT -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="section-header">
+                <h2>What to Expect</h2>
+                <div class="divider divider-center"></div>
+                <p>Your day at the ranch is yours to design. Here's how most guests spend their time.</p>
+            </div>
+            <div class="expect-grid animate-on-scroll">
+                <div class="expect-item">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 110 20 10 10 0 010-20z"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Arrive &amp; Settle In</h3>
+                    <p>Check in during open hours. Grab a towel, change, and take a few deep breaths. The land does the rest.</p>
+                </div>
+                <div class="expect-item">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg>
+                    </div>
+                    <h3>Reset Your Nervous System</h3>
+                    <p>Alternate between the dry sauna, cold plunge, and hot tub. Let your body find its rhythm through contrast therapy.</p>
+                </div>
+                <div class="expect-item">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 10c.6 3.2-.3 5.8-2 8-1.2 1.4-2.7 2-5 2-4 0-6-3-6-6 0-4 3-8 6-10 1 2 2 3.5 4 4 1.5-2 2.5-4 3-6 1.5 2 2 5 0 8z"/></svg>
+                    </div>
+                    <h3>Gather Around the Fire</h3>
+                    <p>Join others at the fire pit for conversation, stillness, or just the warmth. Community happens naturally here.</p>
+                </div>
+                <div class="expect-item">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 12m-3 0a3 3 0 106 0 3 3 0 10-6 0"/></svg>
+                    </div>
+                    <h3>Play &amp; Move</h3>
+                    <p>Hit the pickleball court, explore the trails, or just stretch in the temple space. Move however your body wants to.</p>
+                </div>
+                <div class="expect-item">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg>
+                    </div>
+                    <h3>Rest &amp; Restore</h3>
+                    <p>Find a hammock in the garden, lie back, and let the trees overhead remind you what slowing down feels like.</p>
+                </div>
+                <div class="expect-item">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+                    </div>
+                    <h3>Leave Lighter</h3>
+                    <p>Most guests say they feel a palpable shift by the end of the day. That's not marketing &mdash; that's the land.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADD-ON SERVICES -->
+    <section class="section section-cream">
+        <div class="container">
+            <div class="section-header">
+                <h2>Enhance Your Day</h2>
+                <div class="divider divider-center"></div>
+                <p>Optional add-on services available by appointment during your visit.</p>
+            </div>
+            <div class="addon-grid animate-on-scroll">
+                <div class="addon-card">
+                    <h3>IV Hydration</h3>
+                    <p class="addon-price">$149</p>
+                    <p>Replenish and recharge with a custom IV drip. Bundles available: 5-drip package for $650.</p>
+                </div>
+                <div class="addon-card">
+                    <h3>Pickleball Lessons</h3>
+                    <p class="addon-price">$35&ndash;$85</p>
+                    <p>Private lessons at $85/hr or group sessions at $35/hr. Court rental available at $40/hr.</p>
+                </div>
+                <div class="addon-card">
+                    <h3>Red Light Therapy</h3>
+                    <p class="addon-price">By Appointment</p>
+                    <p>Advanced red light therapy sessions for recovery, skin health, and cellular regeneration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEMBERSHIP UPSELL -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="upsell-banner animate-on-scroll">
+                <div class="upsell-text">
+                    <h2>Come Back Anytime</h2>
+                    <p>If one day isn't enough, membership gives you unlimited access to the ranch, plus appointment-based services, a monthly guest pass, and 10% off all add-ons.</p>
+                    <p class="savings">4 visits pays for a month of membership.</p>
+                    <a href="/awknwithin/awkn-ranch/membership.html" class="btn btn-primary">Explore Membership</a>
+                </div>
+                <div class="upsell-compare">
+                    <div class="compare-box">
+                        <p class="compare-label">Day Pass</p>
+                        <p class="compare-price">$50</p>
+                        <p class="compare-detail">per visit</p>
+                    </div>
+                    <div class="compare-box highlight">
+                        <p class="compare-label">Membership</p>
+                        <p class="compare-price">$199</p>
+                        <p class="compare-detail">unlimited / month</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section section-cream" style="padding: 80px 0;">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-family: var(--font-heading); font-size: clamp(28px, 3vw, 44px); font-weight: 300; color: var(--color-brown-dark); margin-bottom: 16px;">Ready to reset?</h2>
+            <p style="font-size: 16px; color: var(--color-text-light); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7;">Book your day pass and experience what everyone keeps talking about.</p>
+            <a href="https://awkn-ranch.recess.tv/embed/checkout/package/51934c17-2644-4482-ba8b-6b20107de915" class="btn btn-primary" target="_blank" rel="noopener">Book Your Day Pass &mdash; $50</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="AWKN Ranch" class="footer-logo">
+                <p>A wellness and retreat center in Austin, TX. Where consciousness meets community.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/awkn.ranch" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61571491650449" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="/awknwithin/awkn-ranch/">Home</a></li>
+                    <li><a href="/awknwithin/awkn-ranch/events.html">Events</a></li>
+                    <li><a href="/awknwithin/awkn-ranch/offerings.html">Offerings</a></li>
+                    <li><a href="/awknwithin/awkn-ranch/membership.html">Membership</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:5125159924">512-515-9924</a></li>
+                    <li><a href="mailto:connect@awknranch.com">connect@awknranch.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Hours</h4>
+                <ul>
+                    <li>Mon&ndash;Fri: 9am&ndash;9pm</li>
+                    <li>Saturday: 9am&ndash;8pm</li>
+                    <li>Sunday: 10am&ndash;6pm</li>
+                </ul>
+                <h4 style="margin-top: 24px;">Location</h4>
+                <ul>
+                    <li><a href="https://maps.google.com/?q=7600+Stillridge+Dr+Austin+TX+78736" target="_blank" rel="noopener">7600 Stillridge Dr<br>Austin, TX 78736</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AWKN Ranch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
