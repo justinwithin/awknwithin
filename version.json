@@ -1,9 +1,9 @@
 {
-  "version": "v260303.01 11:54am",
-  "release": 1,
-  "sha": "48abf8c",
-  "fullSha": "48abf8ce7caa08f07f7bfaffbdc8c9ced999ea31",
+  "version": "v260303.02 12:01pm",
+  "release": 2,
+  "sha": "317f2fe",
+  "fullSha": "317f2fecae6e5fefe09404f96f389681cfd806e6",
   "actor": "justinwithin",
-  "pushedAt": "2026-03-03T17:54:38Z",
-  "commits": [{"sha": "48abf8c", "message": "Prepare AWKN Ranch for custom domain www.awknranch.com", "author": "Justin DeLaCruz"}]
+  "pushedAt": "2026-03-03T18:01:51Z",
+  "commits": [{"sha": "317f2fe", "message": "Make all links active across AWKN Ranch site", "author": "Justin DeLaCruz"}]
 }
