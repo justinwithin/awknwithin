@@ -51,6 +51,23 @@ jobs:
           cp -r shared out/shared
           cp -r docs out/docs 2>/dev/null || true
           cp -r awkn-ranch out/awkn-ranch
+          cp CNAME out/CNAME
+
+      - name: Create root redirect to AWKN Ranch
+        run: |
+          cat > out/index.html << 'REDIRECT_EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="refresh" content="0;url=/awkn-ranch/">
+            <title>Redirecting to AWKN Ranch...</title>
+          </head>
+          <body>
+            <p>Redirecting to <a href="/awkn-ranch/">AWKN Ranch</a>...</p>
+          </body>
+          </html>
+          REDIRECT_EOF
 
       - uses: actions/upload-pages-artifact@v3
         with:
