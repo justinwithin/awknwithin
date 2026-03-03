@@ -1,9 +1,9 @@
 {
-  "version": "v260303.04 12:03pm",
-  "release": 4,
-  "sha": "0cd1855",
-  "fullSha": "0cd18557b89183284e4c5b63e53cc79ca36351a0",
+  "version": "v260303.05 12:09pm",
+  "release": 5,
+  "sha": "0a4f73f",
+  "fullSha": "0a4f73fa4ae79c5049e2abf30aa6a7b37e10b73c",
   "actor": "justinwithin",
-  "pushedAt": "2026-03-03T18:03:41Z",
-  "commits": [{"sha": "0cd1855", "message": "Add CNAME and root redirect for www.awknranch.com", "author": "Justin DeLaCruz"}]
+  "pushedAt": "2026-03-03T18:09:16Z",
+  "commits": [{"sha": "0a4f73f", "message": "Remove CNAME until DNS is configured", "author": "Justin DeLaCruz"}]
 }
