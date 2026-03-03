@@ -1,9 +1,9 @@
 {
-  "version": "v260303.03 12:02pm",
-  "release": 3,
-  "sha": "c7b509a",
-  "fullSha": "c7b509a88513068b35ce9780ca5f4b5b8b4114d3",
+  "version": "v260303.04 12:03pm",
+  "release": 4,
+  "sha": "0cd1855",
+  "fullSha": "0cd18557b89183284e4c5b63e53cc79ca36351a0",
   "actor": "justinwithin",
-  "pushedAt": "2026-03-03T18:02:45Z",
-  "commits": [{"sha": "c7b509a", "message": "Remove CNAME to restore GitHub Pages site", "author": "Justin DeLaCruz"}]
+  "pushedAt": "2026-03-03T18:03:41Z",
+  "commits": [{"sha": "0cd1855", "message": "Add CNAME and root redirect for www.awknranch.com", "author": "Justin DeLaCruz"}]
 }
