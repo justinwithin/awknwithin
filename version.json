@@ -1,9 +1,9 @@
 {
-  "version": "v260303.02 12:01pm",
-  "release": 2,
-  "sha": "317f2fe",
-  "fullSha": "317f2fecae6e5fefe09404f96f389681cfd806e6",
+  "version": "v260303.03 12:02pm",
+  "release": 3,
+  "sha": "c7b509a",
+  "fullSha": "c7b509a88513068b35ce9780ca5f4b5b8b4114d3",
   "actor": "justinwithin",
-  "pushedAt": "2026-03-03T18:01:51Z",
-  "commits": [{"sha": "317f2fe", "message": "Make all links active across AWKN Ranch site", "author": "Justin DeLaCruz"}]
+  "pushedAt": "2026-03-03T18:02:45Z",
+  "commits": [{"sha": "c7b509a", "message": "Remove CNAME to restore GitHub Pages site", "author": "Justin DeLaCruz"}]
 }
